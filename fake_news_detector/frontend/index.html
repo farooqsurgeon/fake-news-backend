@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fake News Detector</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🕵️‍♂️ Fake News Detector</h1>
+
+    <!-- 📰 News Input -->
+    <label for="newsInput"><strong>Paste news text below:</strong></label>
+    <textarea id="newsInput" placeholder="Paste news text here..."></textarea>
+    <button onclick="analyzeNews()">Analyze</button>
+
+    <!-- 🧠 Latest Prediction Result -->
+    <div id="latestResult" style="margin-top: 10px;"></div>
+
+    <!-- 🔍 Search Bar -->
+    <div id="searchContainer" style="margin-top: 20px;">
+      <label for="searchInput"><strong>Search Prediction History:</strong></label>
+      <input type="text" id="searchInput" placeholder="🔍 Search history..." oninput="filterHistory()" />
+    </div>
+
+    <!-- 🕘 Prediction History -->
+    <div id="history">
+      <h3>🕘 Prediction History</h3>
+    </div>
+
+    <!-- ✅ Trusted News Sources -->
+    <div id="trustedSources" style="margin-top: 30px;">
+      <h3>✅ Trusted News Sources</h3>
+
+      <!-- 🌍 Global News Sources -->
+      <div class="source-group">
+        <h4>🌍 Global</h4>
+        <div class="news-buttons">
+          <button onclick="window.open('https://www.bbc.com/news', '_blank')">BBC News</button>
+          <button onclick="window.open('https://www.reuters.com', '_blank')">Reuters</button>
+          <button onclick="window.open('https://www.nytimes.com', '_blank')">NY Times</button>
+          <button onclick="window.open('https://www.cnn.com', '_blank')">CNN</button>
+          <button onclick="window.open('https://www.aljazeera.com', '_blank')">Al Jazeera</button>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- 🇳🇬 Nigerian News Sources -->
+      <div class="source-group">
+        <h4>🇳🇬 Nigeria</h4>
+        <div class="news-buttons">
+          <button onclick="window.open('https://punchng.com', '_blank')">Punch</button>
+          <button onclick="window.open('https://www.channelstv.com', '_blank')">Channels TV</button>
+          <button onclick="window.open('https://www.dailytrust.com.ng', '_blank')">Daily Trust</button>
+          <button onclick="window.open('https://www.thecable.ng', '_blank')">The Cable</button>
+          <button onclick="window.open('https://www.premiumtimesng.com', '_blank')">Premium Times</button>
+          <button onclick="window.open('https://tribuneonlineng.com', '_blank')">Tribune</button>
+          <button onclick="window.open('https://www.vanguardngr.com', '_blank')">Vanguard</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔧 JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
